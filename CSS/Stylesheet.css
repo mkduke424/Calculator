@@ -1,0 +1,47 @@
+.calculator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: antiquewhite;
+    width: 450px;
+    height: 550px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}
+.screen{
+    background-color: red;
+    height: 50px;
+    width: 400px;
+}
+.keyholder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 450px;
+    width: 320px;
+}
+.keys {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    font-size: large;
+}
+#zero{
+    width: 200px;
+}
+.operator{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100px;
+    height: 450px;
+    
+}
+.op-keys{
+    width: 100px;
+    height: 60px;
+    font-size: large;
+}
+
