@@ -50,30 +50,39 @@ let displayText = "";
 let displayNumber = 0;
 let Screen = document.getElementById("display");
 function populateDisplay(){
-    
+    //ifdiplayText.chartAT(displaytext.length =="." && this.innerHTML == ".") ->  displayNumber = +displayText; Else -> do below
 
     displayText += this.innerHTML
+    
     displayNumber = +displayText;
     Screen.innerHTML = displayText;
 
 }
-//Logic for the operators        
+//Logic for the operators.       
 let arrCalc = [];                                                      //When I set displayNumber to display text outside of the populate display function it wouldn't work. so why does it work now that it's inside the button for event listeners  
 let btnOperators = document.querySelectorAll(".op-keys");
     btnOperators.forEach((button)=>{
         button.addEventListener("click",() =>{
             
         if(button.innerHTML == "+"){
-            arrCalc.push('+');
-            arrCalc.push(displayNumber);
-            clear();
-            console.log(arrCalc);
+            // IF it is not the first iteration we calculate the latest value and store it into an array. Now we can trail calculations
+            if(arrCalc.length>0){
+                displayNumber = operate(arrCalc[0],arrCalc[1],displayNumber);
+                Screen.innerHTML = displayNumber.toString();
+                arrCalc[0] = "+";
+                arrCalc[1] = displayNumber
+                clear();
+            }
+            //If it is the first iteration then I store the operator as the first index in an array and the store the number on the screen as the second index
+            else{
+                arrCalc.push('+');
+                arrCalc.push(displayNumber);
+                clear();
+            }
         }
         else if(button.innerHTML =="="){
-            console.log(displayNumber);
             displayNumber = operate(arrCalc[0],arrCalc[1],displayNumber);
             Screen.innerHTML = displayNumber.toString();
-            console.log(displayNumber);
             arrCalc = [];
         }
         })
