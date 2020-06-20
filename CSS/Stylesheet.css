@@ -11,10 +11,20 @@
     margin-top: 100px;
 }
 .screen{
-    background-color: red;
+    background-color: rgba(143, 101, 101, 0.945);
     height: 50px;
     width: 400px;
+    position: relative;
+    
 }
+#display{
+    position: absolute;
+    bottom: 8px;
+    right: 2px;
+    font-size: x-large;
+    color: mintcream;
+}
+
 .keyholder{
     display: flex;
     flex-wrap: wrap;
@@ -37,11 +47,11 @@
     justify-content: space-evenly;
     width: 100px;
     height: 450px;
-    
 }
 .op-keys{
     width: 100px;
     height: 60px;
     font-size: large;
 }
+
 
