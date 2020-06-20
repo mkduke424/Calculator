@@ -68,7 +68,6 @@ let btnOperators = document.querySelectorAll(".op-keys");
             // IF it is not the first iteration we calculate the latest value and store it into an array. Now we can trail calculations
             if(arrCalc.length>0){
                 displayNumber = operate(arrCalc[0],arrCalc[1],displayNumber);
-                Screen.innerHTML = displayNumber.toString();
                 arrCalc[0] = "+";
                 arrCalc[1] = displayNumber
                 clear();
@@ -76,6 +75,45 @@ let btnOperators = document.querySelectorAll(".op-keys");
             //If it is the first iteration then I store the operator as the first index in an array and the store the number on the screen as the second index
             else{
                 arrCalc.push('+');
+                arrCalc.push(displayNumber);
+                clear();
+            }
+        }
+        else if(button.innerHTML == "-"){
+            if(arrCalc.length > 0){
+                displayNumber = operate(arrCalc[0], arrCalc[1],displayNumber);
+                arrCalc[0] = "-";
+                arrCalc[1] = displayNumber;
+                clear();
+            }
+            else{
+                arrCalc.push("-");
+                arrCalc.push(displayNumber);
+                clear();
+            }
+        }
+        else if(button.innerHTML == "*"){
+            if(arrCalc.length > 0){
+                displayNumber = operate(arrCalc[0], arrCalc[1],displayNumber);
+                arrCalc[0] = "*";
+                arrCalc[1] = displayNumber;
+                clear();
+            }
+            else{
+                arrCalc.push("*");
+                arrCalc.push(displayNumber);
+                clear();
+            }
+        }
+        else if(button.innerHTML == "/"){
+            if(arrCalc.length > 0){
+                displayNumber = operate(arrCalc[0], arrCalc[1],displayNumber);
+                arrCalc[0] = "/";
+                arrCalc[1] = displayNumber;
+                clear();
+            }
+            else{
+                arrCalc.push("/");
                 arrCalc.push(displayNumber);
                 clear();
             }
